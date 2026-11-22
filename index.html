@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>奶龙 Nailoong 官方网站 | 第七印象文化传媒 — 传递快乐与治愈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Share+Tech+Mono&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- SUBTLE CINEMA FILM LAYERS (Completely invisible at 0%!) -->
+  <div id="film-grain" aria-hidden="true"></div>
+  <div id="vignette-layer" aria-hidden="true"></div>
+  <img id="peripheral-ghost" src="assets/cinema/scene3_doorway_crack.jpg" alt="" aria-hidden="true" />
+  <div class="cinema-bar top" aria-hidden="true"></div>
+  <div class="cinema-bar bottom" aria-hidden="true"></div>
+
+  <!-- QUIET MINIMALIST CONTROLS IN DARK CINEMA ACTS -->
+  <div id="dark-controls">
+    <button class="dark-mini-btn" id="dark-audio-btn" type="button">音效：关</button>
+    <button class="dark-mini-btn" id="dark-top-btn" type="button">↺ 回到首页</button>
+  </div>
+
+  <!-- STICKY OFFICIAL HEADER -->
+  <header id="site-header">
+    <div class="top-ribbon" id="top-ribbon">
+      🎉 奶龙全网粉丝突破 39,000,000+！2026 年度全国主题快闪与毛绒盲盒暖心上新
+    </div>
+    <div class="nav-inner">
+      <a href="#stage-hero" class="nav-brand">
+        <img src="assets/header_logo_colorful.png" alt="第七印象" />
+        <span class="nav-brand-tag" id="nav-tag">官方网站</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#stage-hero">首页互动</a></li>
+        <li><a href="#stage-gallery">快闪巡展</a></li>
+        <li><a href="#stage-merch">毛绒盲盒</a></li>
+        <li><a href="#stage-video">官方片花</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="audio-btn" id="header-audio-btn" type="button">
+          <span id="audio-icon">🔇</span>
+          <span id="audio-label">开启音效</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- FLOATING CUTE ASSISTANT (Misbehaves subtly if you try to close it later!) -->
+  <div id="mascot-widget">
+    <div class="mascot-bubble" id="mascot-bubble">
+      <button class="mascot-close" id="mascot-close" type="button" title="关闭">×</button>
+      <span id="mascot-text">你好呀！我是奶龙，点一点我的大肚子试试看~</span>
+    </div>
+    <div class="mascot-avatar" id="mascot-avatar">
+      <img src="assets/nailong_peeking.png" id="mascot-img" alt="奶龙" />
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================
+         STAGE 1: 100% SUNNY OFFICIAL HERO + INTERACTIVE BELLY POKE
+         ======================================================== -->
+    <section class="stage-hero" id="stage-hero">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">✨ 第七印象文化传媒 · 国民级原创 3D 治愈系 IP</div>
+          <img src="assets/icon_nl.png" alt="奶龙 Nailoong" class="hero-logo-img" />
+          <h1 class="hero-title">
+            圆滚滚的<span class="hl">治愈系能量</span>，<br />
+            每天给你 duang~duang~ 快乐！
+          </h1>
+          <p class="hero-desc">
+            奶龙是第七印象打造的原创 3D 动漫超级 IP —— 一只拥有标志性大肚子的黄色异星幼龙。
+            意外来到地球后，他与少年小七成为最好的朋友，用乐观与呆萌陪伴全球数千万粉丝度过温暖日常。
+          </p>
+          <div class="hero-btns">
+            <button type="button" class="btn-sun" id="hero-audio-btn">
+              🎧 开启立体声沉浸体验（强烈推荐）
+            </button>
+            <a href="#stage-gallery" class="btn-outline-sun">浏览官方巡展实拍 ↓</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-box">
+              <div class="num">3900W+</div>
+              <div class="lbl">全网累计粉丝</div>
+            </div>
+            <div class="stat-box">
+              <div class="num">200+</div>
+              <div class="lbl">头部合作品牌</div>
+            </div>
+            <div class="stat-box">
+              <div class="num">2000+</div>
+              <div class="lbl">官方授权周边</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTION #1: Cute Interactive Belly-Poke Toy -->
+        <div class="belly-toy-card">
+          <div class="toy-speech" id="toy-speech">点一点我的大肚子，听我 duang~duang~ 叫！</div>
+          <div class="belly-stage" id="belly-stage">
+            <canvas id="belly-canvas" width="500" height="500" aria-label="奶龙官方互动形象"></canvas>
+          </div>
+          <div class="toy-footer-row">
+            <span id="poke-count-text">今日全网已贴贴：12,847 次</span>
+            <button type="button" class="poke-btn" id="poke-btn">戳戳大肚子</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STAGE 2: 线下快闪官方图集 — STILL 100% BRIGHT SUNNY WHITE!
+         (Photo 5 drops real-world 3AM mall mascot inside a white card!)
+         ======================================================== -->
+    <section class="stage-gallery" id="stage-gallery">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-pill">EXHIBITION GALLERY · 全国巡展与品牌快闪</span>
+          <h2 class="sec-title">走进现实世界的快乐奶龙</h2>
+          <p class="sec-sub">
+            2026 年度奶龙携手各大商业体与知名品牌落地全国多座城市，欢迎点击切换浏览各站点官方现场实拍。
+          </p>
+        </div>
+
+        <!-- INTERACTION #2: Interactive Official Event Photo Carousel -->
+        <div class="gallery-shell">
+          <div class="gallery-main" id="gallery-main">
+            <img src="assets/brand_example_2.png" alt="官方快闪实拍" id="gallery-active-img" />
+            <span class="gallery-tag" id="gallery-tag">现场实拍 · 深圳站</span>
+            <button type="button" class="gallery-nav-btn prev" id="gallery-prev" aria-label="上一张">‹</button>
+            <button type="button" class="gallery-nav-btn next" id="gallery-next" aria-label="下一张">›</button>
+          </div>
+
+          <div class="gallery-caption-row">
+            <div>
+              <div class="gallery-caption-title" id="gallery-cap-title">比亚迪海豚 × 奶龙 · 龙年“豚”好运城市巡游</div>
+              <div class="gallery-caption-desc" id="gallery-cap-desc">
+                携手新能源头部品牌打造全国核心商圈快闪装置，吸引众多亲子家庭现场打卡留念。
+              </div>
+            </div>
+            <span class="gallery-counter" id="gallery-counter">1 / 5</span>
+          </div>
+
+          <div class="gallery-thumbs" id="gallery-thumbs">
+            <button type="button" class="thumb-btn active" data-idx="0">
+              <img src="assets/brand_example_2.png" alt="比亚迪巡游" />
+              <span class="thumb-label">01 比亚迪巡游</span>
+            </button>
+            <button type="button" class="thumb-btn" data-idx="1">
+              <img src="assets/brand_example_5.png" alt="麦咖啡联名" />
+              <span class="thumb-label">02 麦咖啡快闪</span>
+            </button>
+            <button type="button" class="thumb-btn" data-idx="2">
+              <img src="assets/brand_example_3.png" alt="Adidas运动会" />
+              <span class="thumb-label">03 校园运动会</span>
+            </button>
+            <button type="button" class="thumb-btn" data-idx="3">
+              <img src="assets/brand_example_1.png" alt="和平精英联动" />
+              <span class="thumb-label">04 和平精英展</span>
+            </button>
+            <button type="button" class="thumb-btn" data-idx="4">
+              <img src="assets/cinema/scene1_mall_mascot.jpg" alt="闭馆验收实拍" />
+              <span class="thumb-label">05 闭馆清场实拍</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STAGE 3: 自研盲盒床头实景试灯（由你亲手关灯！）+ 真实买家评价墙
+         ======================================================== -->
+    <section class="stage-merch" id="stage-merch">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-pill">OFFICIAL PLUSH · 自研毛绒盲盒旗舰款</span>
+          <h2 class="sec-title">“奶龙去哪玩”卧室陪伴毛绒盲盒</h2>
+          <p class="sec-sub">
+            选用亲肤短绒面料与手工缝制工艺，摆放在卧室床头，陪你度过每一个安静的夜晚。
+          </p>
+        </div>
+
+        <!-- INTERACTION #3: Interactive Bedroom Day / Night Light Switch! -->
+        <div class="merch-showcase">
+          <div class="lamp-viewport">
+            <img src="assets/horror/plush_1_clean.jpg" alt="白天光照展示" id="lamp-day-img" />
+            <img src="assets/cinema/scene2_plush_basement.jpg" alt="夜间实景展示" id="lamp-night-img" />
+            <div id="lamp-flash-burst"></div>
+          </div>
+
+          <div class="merch-panel">
+            <div>
+              <div class="merch-tag-row">
+                <span class="merch-tag">官方正品</span>
+                <span class="merch-tag" id="merch-stock-tag">已售 8.6 万+</span>
+              </div>
+              <h3 class="merch-title" id="merch-title">奶龙去哪玩 · 绒毛床头陪伴盲盒（整端 6 只）</h3>
+              <div class="merch-price" id="merch-price">¥ 354<span>含 6 个常规款 · 极低概率出隐藏款</span></div>
+              <p class="merch-desc" id="merch-desc">
+                采用全新微光护眼材质，白天萌趣治愈，夜晚关灯后放在床头柜上同样拥有安心的陪伴质感。点击下方开关，提前预览卧室关灯后的实景效果。
+              </p>
+            </div>
+
+            <div class="light-switch-box">
+              <div class="switch-label">
+                <span>卧室灯光实景预览</span>
+                <span id="switch-mode-badge">当前：☀️ 白天开灯</span>
+              </div>
+              <button type="button" class="switch-btn" id="room-light-switch">
+                <span id="switch-btn-text">点击关灯 · 预览卧室夜间效果</span>
+                <span class="switch-toggle-track"><span class="switch-toggle-thumb"></span></span>
+              </button>
+              <div class="switch-status-msg" id="switch-status-msg"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTION #4: Boiling-Frog Buyer Reviews + Hijacked Comment Input -->
+        <div class="reviews-header">
+          <h3>已购粉丝真实评价（9,412 条）</h3>
+          <span style="font-size:0.84rem; opacity:0.65;">按时间倒序排列</span>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-top">
+              <span class="review-user">草莓奶昔今天开心吗</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-body">
+              毛绒手感超级柔软！买了一整端摆在书架上，每天下班回家看见这群圆滚滚的小奶龙心情都会变好！
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-top">
+              <span class="review-user">深圳宝妈林女士</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-body">
+              女儿特别喜欢，抱着睡觉一觉到天亮。顺丰发货很快，包装盒完好无损，正品细节做得很精致。
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-top">
+              <span class="review-user">小宇不想早起</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-body">
+              摆在床头柜上超可爱！唯一有点奇怪的是我那只头顶缝线好像有点开裂，不过不影响，反正关灯也看不见。
+            </p>
+          </article>
+
+          <article class="review-card uneasy">
+            <div class="review-top">
+              <span class="review-user">阿哲77</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p class="review-body">
+              收到拆开有一股很重的地下室潮味，晒了两天太阳还在。而且它眼睛是不是比官图深很多？晚上从余光扫过去总觉得它在眨眼，客服说是光线折射。
+            </p>
+          </article>
+
+          <article class="review-card uneasy">
+            <div class="review-top">
+              <span class="review-user">匿名买家</span>
+              <span class="review-stars">★★★★☆</span>
+            </div>
+            <p class="review-body">
+              昨晚关灯睡到三点，听见床边有很慢、很潮湿的呼吸声。我摸手机开闪光灯照了一下，书桌上的那只奶龙不知什么时候掉在了地上，脸正对着我的枕头。
+            </p>
+          </article>
+
+          <article class="review-card uneasy">
+            <div class="review-top">
+              <span class="review-user">已注销用户</span>
+              <span class="review-stars one-star">★☆☆☆☆</span>
+            </div>
+            <p class="review-body">
+              我把盒子扔进楼下垃圾桶了。可刚才回到卧室，门外面有人很轻地敲了三下门。别去猫眼看。别开门。
+            </p>
+          </article>
+        </div>
+
+        <!-- Hijacked Input Composer -->
+        <div class="comment-composer">
+          <div class="composer-top">
+            <span class="composer-label">我也来留下一条暖心评价：</span>
+            <div class="quick-tags">
+              <button type="button" class="quick-tag" data-tag="太可爱啦！">太可爱啦！</button>
+              <button type="button" class="quick-tag" data-tag="质量很好，很治愈">质量很好，很治愈</button>
+              <button type="button" class="quick-tag" data-tag="已经下单全套">已经下单全套</button>
+            </div>
+          </div>
+          <div class="composer-row">
+            <input type="text" id="hijack-input" placeholder="输入你想对奶龙说的话，或点击上方快捷好评…" autocomplete="off" />
+            <button type="button" id="hijack-submit">发表评价</button>
+          </div>
+          <div id="composer-notice"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STAGE 4: 官方动画播放器崩溃与画面内敲击
+         ======================================================== -->
+    <section class="stage-video" id="stage-video">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-pill">OFFICIAL TRAILER · 2026 全新篇章</span>
+          <h2 class="sec-title">《奶龙与小七》未公开片段试看</h2>
+          <p class="sec-sub">
+            点击下方画面播放最新预告片段。
+          </p>
+        </div>
+
+        <!-- INTERACTION #5: Interactive Official Video Player That Refuses To Stop -->
+        <div class="video-player-shell" id="video-shell">
+          <div class="video-viewport" id="video-viewport">
+            <canvas id="trailer-canvas" width="920" height="424"></canvas>
+            <div class="video-center-play" id="video-center-play">
+              <div class="play-circle">▶</div>
+              <span class="play-caption">点击播放官方先导片（00:14）</span>
+            </div>
+          </div>
+          <div class="video-controls">
+            <button type="button" class="vc-btn" id="vc-toggle-btn">播放</button>
+            <div class="vc-bar"><div id="vc-progress"></div></div>
+            <span id="vc-time">00:00 / 00:14</span>
+          </div>
+        </div>
+
+        <div class="video-footnote" id="video-footnote"></div>
+
+        <div class="bedroom-descent-bridge">
+          ……你听见卧室外面有声音吗？
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STAGE 5: 深夜卧室门缝 — INTERACTIVE DRAG / CLICK DOOR PULL
+         ======================================================== -->
+    <section class="stage-doorway" id="stage-doorway">
+      <div class="doorway-sticky">
+        <div class="door-scene-frame" id="door-scene-frame">
+          <!-- Real 35mm cinema still: Nailong gripping dark wooden bedroom door crack -->
+          <img src="assets/cinema/scene3_doorway_crack.jpg" alt="" id="doorway-photo" />
+
+          <!-- Left bedroom wall shadow frame -->
+          <div class="door-dark-left-wall"></div>
+
+          <!-- Draggable Wooden Door Leaf that YOU physically pull open! -->
+          <div id="door-leaf" title="按住向右拖动门板">
+            <div class="door-molding"></div>
+            <div class="door-handle"></div>
+          </div>
+
+          <div class="door-hud" id="door-hud">
+            <div class="door-instruction" id="door-instruction">门外一直在响。向右拖动门板，或者点击拉开门缝。</div>
+            <button type="button" class="door-pull-btn" id="door-pull-btn">手扶门把 · 再拉开一点</button>
+            <div class="door-progress-track"><div id="door-progress-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STAGE 6: DARK BEDROOM CAMERA FLASH HORROR CLIMAX
+         ======================================================== -->
+    <section class="stage-darkroom" id="stage-darkroom">
+      <div class="darkroom-sticky">
+        <div id="darkroom-stage-wrap">
+          <canvas id="darkroom-canvas"></canvas>
+          <div id="camera-strobe"></div>
+
+          <!-- Realistic Cracked Smartphone Glass SVG Overlay (appears when camera drops!) -->
+          <svg id="cracked-lens-svg" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+            <g stroke="rgba(255,255,255,0.48)" stroke-width="1.4" fill="none">
+              <path d="M 380 260 L 140 40 M 380 260 L 40 310 M 380 260 L 190 740 M 380 260 L 660 780 M 380 260 L 1140 520 M 380 260 L 920 30 M 380 260 L 420 10" />
+              <path stroke-width="0.9" d="M 270 155 L 330 225 L 440 210 L 520 310 L 410 385 L 280 340 Z" />
+              <path stroke-width="0.7" d="M 190 285 L 295 430 L 510 510 L 760 410 L 620 180 L 400 120" />
+              <path stroke-width="0.6" d="M 660 415 L 820 560 M 240 560 L 420 620 M 540 245 L 740 210" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- INTERACTION #7: Interactive Smartphone Camera Flash Shutter -->
+        <div class="camera-hud" id="camera-hud">
+          <div class="camera-hint" id="camera-hint">灯泡炸了。黑暗里有什么东西进来了……按快门开闪光灯确认。</div>
+          <button type="button" class="shutter-btn" id="shutter-btn" aria-label="开启闪光灯拍照确认">
+            <span class="shutter-inner">📸</span>
+          </button>
+          <div class="flash-charge-status" id="flash-charge-status">⚡ 闪光灯就绪 · 点击画面或按空格键</div>
+        </div>
+
+        <!-- Quiet Restrained Cinema Aftermath -->
+        <div class="aftermath-bar" id="aftermath-bar">
+          <div class="aftermath-whisper">它就在你床边。</div>
+          <div class="aftermath-btns">
+            <button type="button" class="aftermath-btn" id="replay-darkroom-btn">↻ 重新进入黑暗卧室</button>
+            <button type="button" class="aftermath-btn" id="escape-home-btn">↺ 回到阳光首页</button>
+          </div>
+        </div>
+
+        <footer class="cinema-footer">
+          © 2026 第七印象文化传媒（深圳）有限公司 · 粉丝个人二创心理恐怖互动体验
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="audio.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
